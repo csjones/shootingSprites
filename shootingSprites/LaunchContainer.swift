@@ -12,7 +12,19 @@ import SpriteKit
 
 class LaunchContainer: UIViewController {
 
+    private weak var spriteScene: GameScene?
+
     @IBOutlet weak var spriteView: SKView!
+
+    @IBAction func didTapGameView(sender: UITapGestureRecognizer) {
+        guard let spriteScene = self.spriteScene else {
+            return
+        }
+
+        let mker = sender.locationInView( spriteView )
+
+        spriteScene.fireWithPoint( mker )
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +41,12 @@ class LaunchContainer: UIViewController {
 
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
+            self.spriteScene = scene
 
             spriteView.presentScene(scene)
         }
     }
+    
 
     override func shouldAutorotate() -> Bool {
         return true

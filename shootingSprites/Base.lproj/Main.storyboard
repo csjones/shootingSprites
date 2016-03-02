@@ -22,18 +22,27 @@
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="vx7-Fu-8Pz" firstAttribute="top" secondItem="hjI-fg-B4c" secondAttribute="bottom" id="26X-4W-aEk"/>
                             <constraint firstAttribute="trailing" secondItem="hjI-fg-B4c" secondAttribute="trailing" id="DhE-QP-FRl"/>
                             <constraint firstItem="hjI-fg-B4c" firstAttribute="top" secondItem="V53-ON-6bF" secondAttribute="top" id="JoF-Wd-x9c"/>
                             <constraint firstItem="hjI-fg-B4c" firstAttribute="leading" secondItem="V53-ON-6bF" secondAttribute="leading" id="Sjj-Pi-Xbd"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="p24-Et-dMp" appends="YES" id="o20-GC-mSC"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="spriteView" destination="hjI-fg-B4c" id="Us6-YI-Vag"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tmk-oK-Blb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="p24-Et-dMp">
+                    <connections>
+                        <action selector="didTapGameView:" destination="zLo-Pe-OIl" id="9CU-Uk-o3k"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-365" y="265"/>
         </scene>
